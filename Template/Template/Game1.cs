@@ -11,8 +11,11 @@ namespace Template
     {
         GraphicsDeviceManager graphics;
         SpriteBatch SpriteBatch;
-        Texture2D Eric;
-        Vector2 EricPos = new Vector2(100, 300);
+        Texture2D Hand;
+        Vector2 Handpos = new Vector2(0, 300);
+        public static int ScreenWidth;
+        public static int ScreenHeight;
+        
 
         public Game1()
         {
@@ -28,8 +31,8 @@ namespace Template
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
+            ScreenWidth = graphics.PreferredBackBufferWidth;
+            ScreenHeight = graphics.PreferredBackBufferHeight;
             base.Initialize();
         }
 
@@ -41,7 +44,7 @@ namespace Template
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             SpriteBatch = new SpriteBatch(GraphicsDevice);
-            Eric = Content.Load<Texture2D>("Eric");
+            Hand = Content.Load<Texture2D>("hand");
            
 
             // TODO: use this.Content to load your game content here
@@ -65,14 +68,10 @@ namespace Template
         protected override void Update(GameTime gameTime)
         {
             KeyboardState kstate = Keyboard.GetState();
-            if (kstate.IsKeyDown(Keys.Right))
-                EricPos.X++;
-            if (kstate.IsKeyDown(Keys.Left))
-                EricPos.X--;
             if (kstate.IsKeyDown(Keys.Down))
-                EricPos.Y++;
+                Handpos.Y++;
             if (kstate.IsKeyDown(Keys.Up))
-                EricPos.Y--;
+                Handpos.Y--;
             base.Update(gameTime);
         }
 
@@ -85,7 +84,7 @@ namespace Template
             graphics.PreferredBackBufferHeight = 1000;   // set this value to the desired height of your window
             graphics.ApplyChanges();
             SpriteBatch.Begin();
-            SpriteBatch.Draw(Eric, EricPos, Color.CornflowerBlue);
+            SpriteBatch.Draw(Hand, Handpos,Color.CornflowerBlue);
             SpriteBatch.End();
 
             // TODO: Add your drawing code here
