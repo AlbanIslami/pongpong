@@ -15,6 +15,9 @@ namespace Template
         Vector2 Handpos = new Vector2(0, 300);
         public static int ScreenWidth;
         public static int ScreenHeight;
+        public static int Random Random;
+        
+        
         
 
         public Game1()
@@ -33,6 +36,8 @@ namespace Template
         {
             ScreenWidth = graphics.PreferredBackBufferWidth;
             ScreenHeight = graphics.PreferredBackBufferHeight;
+            Random = new Random();
+
             base.Initialize();
         }
 
@@ -44,6 +49,8 @@ namespace Template
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             SpriteBatch = new SpriteBatch(GraphicsDevice);
+
+            var 
             Hand = Content.Load<Texture2D>("hand");
            
 
