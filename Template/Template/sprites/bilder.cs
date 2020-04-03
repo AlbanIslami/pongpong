@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SharpDX.Direct3D11;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,8 @@ namespace Template.sprites
         public float snabb;
         public röra röra;
 
-        public Rectangle rec
+        public Rectangle rectangle
+
         {
             get
             {
@@ -47,7 +49,7 @@ namespace Template.sprites
             return this.rec.Right + this.hastighet.X < bilder.Rectangle.Left &&
                 this.rec.Left < bilder.Rectangle.Left &&
                 this.rec.Bottom < bilder.Rectangle.Top &&
-                this.rec.Top < bilder.Rectangle.Bottom &&;
+                this.rec.Top < bilder.Rectangle.Bottom;
         }
 
         protected bool höger(bilder sprites)
@@ -55,7 +57,7 @@ namespace Template.sprites
             return this.rec.Left + this.hastighet.X < bilder.Rectangle.Right &&
                 this.rec.Top < bilder.Rectangle.Top &&
                 this.rec.Right < bilder.Rectangle.Left &&
-                this.rec.Left < bilder.Rectangle.Right &&;
+                this.rec.Left < bilder.Rectangle.Right;
 
         }
         protected bool toppen(bilder sprites)
@@ -63,14 +65,14 @@ namespace Template.sprites
             return this.rec.Bottom + this.hastighet.Y < texture.Rectangle.Top &&
                 this.rec.Top < texture.Rectangle.Top &&
                 this.rec.Right < texture.Rectangle.Left &&
-                this.rec.Left < texture.Rectangle.Right &&;
+                this.rec.Left < texture.Rectangle.Right;
         }
         protected bool botten(bilder sprites)
         {
             return this.rec.Top + this.hastighet.Y < bilder.Rectangle.Bottom &&
                 this.rec.Bottom < texture.Rectangle.Bottom &&
                 this.rec.Right < texture.Rectangle.Left &&
-                this.rec.Left < texture.Rectangle.Right &&;
+                this.rec.Left < texture.Rectangle.Right;
         }
         #endregion
 

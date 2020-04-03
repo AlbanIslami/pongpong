@@ -13,14 +13,13 @@ namespace Template
     {
         GraphicsDeviceManager graphics;
         SpriteBatch SpriteBatch;
-        Texture2D Hand;
-        Vector2 Handpos = new Vector2(0, 300);
+  
         public static int ScreenWidth;
         public static int ScreenHeight;
         public static int Random Random;
 
         private poäng points;
-        private List<bilder> _sprites;
+        private List<bilder> bilders;
 
         
         
@@ -70,9 +69,9 @@ namespace Template
         
         protected override void Update(GameTime gameTime)
         {
-            foreach (var sprite in _sprites)
+            foreach (var sprite in bilders)
             {
-                sprite.Update(gameTime, _sprites); 
+                sprite.Update(gameTime, bilders); 
             }
             base.Update(gameTime);
         }
