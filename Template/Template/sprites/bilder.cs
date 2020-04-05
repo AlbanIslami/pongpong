@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Template.Models;
+using Texture2D = Microsoft.Xna.Framework.Graphics.Texture2D;
 
 namespace Template.sprites
 {
@@ -19,7 +20,7 @@ namespace Template.sprites
         public float snabb;
         public röra röra;
 
-        public Rectangle rectangle
+        public Rectangle rec
 
         {
             get

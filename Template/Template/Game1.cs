@@ -84,7 +84,7 @@ namespace Template
             
             SpriteBatch.Begin();
 
-            foreach (var sprite in _sprites)
+            foreach (var sprite in bilders)
                 bilder.Draw(SpriteBatch);
 
             points.Draw(SpriteBatch);

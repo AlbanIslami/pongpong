@@ -9,11 +9,11 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Template.sprites
 {
-    class Boll : sprites
+    class Boll : bilder
     {
         private float _timer = 0f;
         private Vector2? starten = null;
-        private fkiat fart;
+        private float fart;
         private bool rörande;
 
         public poäng poäng;
@@ -25,11 +25,11 @@ namespace Template.sprites
             fart = 3f;
         }
 
-        public override void Update(Gametime gametime, List<bilder> bilders)
+        public override void Update(GameTime gametime, List<bilder> bilders)
         {
             if(starten == null)
             {
-                starten = Postion;
+                starten = position;
                 fart = hastighet;
             }
         }
